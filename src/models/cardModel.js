@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const ObjectId   = mongoose.Schema.Types.ObjectId
+const ObjectId = mongoose.Schema.Types.ObjectId
 const cardsSchema = new mongoose.Schema({
     cardNumber: {
         type: String,
@@ -17,19 +17,20 @@ const cardsSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    DOB: {
-        type: Date,
-        required: true,
-    },
     customerID: {
         type: ObjectId,
-        ref:"costomer",
+        ref: "costomer",
+        trim: true
+    }
+    , vision: {
+        type: String,
+        required: true,
         trim: true
     },
     status: {
         type: String,
         enum: ["active", "inactive"],
-        default:"active",
+        default: "active",
         trim: true,
     },
 }, { timeseries: true })

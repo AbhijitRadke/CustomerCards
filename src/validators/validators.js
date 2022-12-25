@@ -31,8 +31,14 @@ const isValidEmail = function (email) {
     return emailRegex.test(email);
 }
 
+const isValidDate = function (date) {
+    const dateregex = /^[12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/
+    return dateregex.test(String(date));
+
+}
 
 
-module.exports = { isEmpty, isValidName, isValidEmail, isValidPhone, isValidBody,  }
+
+module.exports = { isEmpty, isValidName, isValidEmail, isValidPhone, isValidBody,isValidDate  }
 
 
