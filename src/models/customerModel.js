@@ -35,6 +35,7 @@ const customerSchema = new mongoose.Schema({
     customerID: {
         type: String,
         required: true,
+        unique:true,
         trim: true
     },
     status: {

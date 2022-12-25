@@ -18,8 +18,9 @@ const cardsSchema = new mongoose.Schema({
         trim: true
     },
     customerID: {
-        type: ObjectId,
+        type: String,
         ref: "costomer",
+        unique: true,
         trim: true
     }
     , vision: {

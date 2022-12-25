@@ -57,7 +57,7 @@ const getcustomers = async function (req, res) {
     try {
 
         const customerData = await customerModel.find({ status: "active" })
-        if (customerData.length == 0) return res.status(400).send({ status: false, message: "No customer data found" })
+        if (customerData.length == 0) return res.status(404).send({ status: false, message: "No customer data found" })
         return res.status(200).send({ status: true, data: customerData })
 
     } catch (err) {
